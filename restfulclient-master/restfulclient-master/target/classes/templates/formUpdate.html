@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Consumir API REST</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="col-sm-6">
+        <form th:action="@{/actualizar}" th:object="${UserRest}" method="POST">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Crear Usuario</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>User Id</label>
+                        <input th:field="*{userId}" type="text" class="form-control" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input th:field="*{firstName}" type="text" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido</label>
+                        <input th:field="*{lastName}" type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" value="Guardar" class="btn btn-success"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
